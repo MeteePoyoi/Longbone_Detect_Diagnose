@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CIS</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style_page.css') }}">
+    <!-- responsive style -->
+    <!-- <link href="css/responsive.css" rel="stylesheet" /> -->
+</head>
+
+<body>
+    <div class="hero_area custom_page-height">
+        <!-- header section strats -->
+        <section class="header_section">
+            <div class="container">
+            </div>
+        </section>
+        <!-- end header section -->
+    </div>
+    <!-- shop section -->
+    <section class="shop_section layout_padding">
+        <div class="container">
+            <div class="d-flex justify-content-center">
+                <h2 class="heading_style">
+                    วิเคราะห์การแตกร้าวจากรูปภาพ X-RAY
+                </h2>
+            </div>
+            <div class="row">
+                <div class="col-md-6" style="background:#0dd9cf;">
+                    <div class="d-flex align-items-center h-100">
+                        <div class="shop-detail">
+                            <form class="form-signin" method=post enctype=multipart/form-data style="color: white;">
+                                <h1 class="h3 mb-3 font-weight-normal" style="margin-bottom: 4rem!important;">กรุณาใส่ภาพก่อนกดปุ่มตรวจ</h1>
+                                <input type="file" name="file" class="form-control-file" id="inputfile">
+
+                                <br />
+                                <button class="btn btn-lg btn-primary btn-block" type="submit">ตรวจจับการแตกร้าว</button>
+                                <p style="color:white;margin-top: 100px;">กรุณาใส่ภาพไม่เกิน 1 MB และนามสกุล.JPG เท่านั้น</p>
+                            </form>
+                            <script src="//code.jquery.com/jquery-3.3.1.slim.min.js"
+                                integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+                                crossorigin="anonymous"></script>
+                            <script src="//cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+                                integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+                                crossorigin="anonymous"></script>
+                            <script src="//stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+                                integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+                                crossorigin="anonymous"></script>
+                            <script type="text/javascript">
+                                $('#inputfile').bind('change', function () {
+                                    let fileSize = this.files[0].size / 1024 / 1024; // this gives in MB
+                                    if (fileSize > 1) {
+                                        $("#inputfile").val(null);
+                                        alert('file is too big. images more than 1MB are not allowed')
+                                        return
+                                    }
+
+                                    let ext = $('#inputfile').val().split('.').pop().toLowerCase();
+                                    if ($.inArray(ext, ['jpg', 'jpeg']) == -1) {
+                                        $("#inputfile").val(null);
+                                        alert('only jpeg/jpg files are allowed!');
+                                    }
+                                });
+                            </script>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6" style="background:#0dd9cf;">
+                    <div class="shop_img-box">
+                        <img src="../static/image0.jpg" class="img-fluid"
+                            style="width: 350px;height: 447px;margin-left: 50px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <center>
+        <form class="grid" action="/predict" method="POST">
+            <button class="btn btn-lg btn-info btn-block" type="submit" style="width: 100px;">วินิจฉัย</button>
+        </form>
+    </center>
+
+</body>
+
+</html>

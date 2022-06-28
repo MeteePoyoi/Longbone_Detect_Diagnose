@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <title>CIS</title>
+<head>
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/style_help.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style_home_page.css') }}">
+</head>
+<!-- body -->
+
+<body class="main-layout">
+    <!-- loader  -->
+
+    <div class="wrapper">
+        <!-- end loader -->
+
+        <div id="content">
+            <!-- header -->
+            <!-- end header -->
+
+            <div class="yellow_bg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="title">
+                                <h2>วิธีใช้</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- pricing -->
+            <div class="pricing">
+                <div class="container">
+
+                </div>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mar_bottom">
+                            <div class="pricing_img">
+                                <figure><img src="../static/help_2.gif" alt="#" />
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 pad_left">
+                            <div class="pricing_box">
+                                <div class="list">
+                                    <h1 style="text-align: left;
+                                    padding-left: 30px;
+                                    padding-right: 30px;
+                                    margin-bottom: 50px;"><b style="font-size: 30px;">2.</b>หลังจากอัปโหลดภาพ X-RAY ให้กดปุ่ม"ตรวจ"เพื่อวิเคราห์รูปภาพว่าจุดไหนเป็นกระดูกแตกร้าว หรือกระดูกหัก</h1>
+                                
+                                    <div style="display: flex;justify-content: center;">
+                                        <form action="/help_1" method="GET">
+                                            <input class="file_submit" type="Submit" value="ย้อนกลับ" style="font-size: 15px; margin-right: 10px;">
+                                        
+                                        </form>
+                                       <form action="/help_3" method="GET">
+                                            <input class="file_submit" type="Submit" value="หน้าถัดไป" style="font-size: 15px;">
+                                        
+                                        </form>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+</body>
+
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>CIS</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style_last_page.css') }}">
+</head>
+
+<body>
+
+  <div style="display: flex;">
+    <div style="width: 50%;">
+      <h1 style="padding-left: 30px;font-size: 50px; margin: 0px;">ผลการ</h1>
+      <h1 style="color: #0dd9cf;padding-left: 30px;font-size: 50px; margin: 0px;">วินิจฉัย</h1>
+      <h1 style="padding-left: 30px;font-size: 50px; margin: 0px;margin-bottom: 1em;">จากภาพ x-ray</h1>
+
+    </div>
+    <div style="padding-top: 250px;padding-bottom: 100px;">
+      <h3>
+        {% if result_text %}
+        <center>
+          <h1
+            style="background: #0dd9cf; position: absolute; left: 0px; width: 600px;padding: 10px;color: white;font-size: 100px;text-align: center;">
+            {{result_text}}</h1>
+        </center>
+        {% else %}
+        <h1
+          style="background: #0dd9cf; position: absolute; right: 0px; width: 600px;padding: 10px;color: white;font-size: 100px;text-align: center;">
+          {{result_text}}</h1>
+        {% endif %}
+      </h3>
+      </span>
+    </div>
+    <center>
+       <div style="width:100%;">
+      <div style="display: flex;">
+       
+          <div>
+            <img src="../static/image0.jpg" width="400px" height="530px" style="width:5;;padding-top: 40px;">
+            <br><br>
+            <a href="../static/image2.jpg" download="bone_image">
+              <button type="button" class="btn btn-outline-secondary">download</button>
+            </a>
+          </div>
+
+      </div>
+    </div></center>
+    <div style="padding-left: 10%;padding-top: 20px; ">
+      <input type="checkbox" id="checkbox_toggle">
+      <label for="checkbox_toggle"><img src="../static/setting.png" style="background-color: #0dd9cf;margin-left: 130px;" width="45px"height="45px"></label>
+      <div class="input_check_form">
+        <form method="POST">
+          <div style="background: #0dd9cf;color: white;">
+            <center>
+              {{form.hidden_tag()}}
+              <b>{{form.number_length.label}}</b><br>
+              {{form.number_length(class="form-control",placeholder="threshold ของ length")}}
+            </center>
+            <center>
+              {{form.hidden_tag()}}
+              <b>{{form.number_alingment.label}}</b><br>
+              {{form.number_alingment(class="form-control",placeholder="threshold ของ alingment")}}
+
+            </center>
+            <center>
+              {{form.hidden_tag()}}
+              <b>{{form.number_apposition.label}}</b><br>
+              {{form.number_apposition(class="form-control",placeholder="threshold ของ apposition")}}
+            </center>
+          </div>
+          <center style="padding-bottom: 90px;">
+            <br>
+            {{form.submit(class="btn btn-outline-secondary")}}
+          </center>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div style="display: flex;width: 100%;justify-content: space-around;margin-top:40px;">
+    <form class="grid" action="/" method="GET">
+      <button type="submit" style="height: 30px;
+        margin-top: 5vmax;
+        border: 1px solid #0dd9cf;
+        outline: none;
+        background-color: #0dd9cf;
+        color: white;
+        padding: 0px 40px;
+        cursor: pointer;
+        transition: 0.3s;
+        letter-spacing: 3px;
+        font-size: 15px;">หน้าแรก</button>
+    </form>
+    <span style="font-size: 20px;">
+      <h3>Length</h3>
+      <h5 style="background: #0dd9cf;color: white;padding: 10px;">
+        <center>{{xLength}} - {{yLength}}</center>
+      </h5>
+    </span>
+    <span style="font-size: 20px;">
+      <h3>Alingment</h3>
+      <h5 style="background: #0dd9cf;color: white;padding: 10px;">
+        <center>{{xalingment}} - {{yalingment}}</center>
+      </h5>
+    </span>
+    <span style="font-size: 20px;">
+      <h3>Apposition</h3>
+      <h5 style="background: #0dd9cf;color: white;padding: 10px;">
+        <center>{{xapposition}} - {{yapposition}}</center>
+      </h5>
+    </span>
+  </div>
+</body>
+
+</html>

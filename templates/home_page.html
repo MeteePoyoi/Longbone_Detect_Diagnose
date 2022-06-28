@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>cis</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style_home_page.css') }}">
+</head>
+
+<body>
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <!-- <span>
+            CIS
+          </span> -->
+          <img src="../static/cis.png" style="width:5%; height:5%;">
+        </a>
+      </div>
+    </header>
+    <div style="display: flex;">
+      <section class=" slider_section position-relative">
+        <div class="container" style="margin-left: 50px;"">
+          <div class=" row">
+          <div class="col-md-7">
+            <div class="detail-box">
+              <h2>
+                ซอฟแวร์<br>
+                ตรวจจับการประเมิน
+              </h2>
+              <h1>
+                การแตกร้าว
+              </h1>
+              <h2>
+                ของชิ้นส่วนกระดูกยาว<br>
+                ของขาและแขน
+              </h2>
+              <div style="display: flex;">
+                <form action="/page" method="POST">
+                  <input class="file_submit" type="Submit" value="เริ่ม" style="font-size: 15px;margin-right: 10px;">
+
+                </form>
+                <form action="/help_1" method="GET">
+                  <input class="file_submit" type="Submit" value="วิธีใช้" style="font-size: 15px;">
+
+                </form>
+
+              </div>
+              <!-- <img src="../static/cis.png" style="width:30%; height:30%;margin-top: 150px;"> -->
+            </div>
+          </div>
+
+        </div>
+    </div>
+    </section>
+    <img src="../static/css/bone_body.png" style="height: 700px; margin-left:300px;">
+  </div>
+  </div>
+</body>
+
+</html>

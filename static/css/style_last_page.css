@@ -1,0 +1,9 @@
+input[type="checkbox"] {
+    display: none;
+}
+.input_check_form form{
+    display: none;
+}
+input[type="checkbox"]:checked ~.input_check_form form{
+    display: block;
+}
