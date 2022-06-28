@@ -10,11 +10,11 @@ Simple app consisting of a form where you can upload an image, and see the infer
 then visit http://localhost:5000/ in your browser:
 
 <p align="center">
-<img src="https://github.com/robmarkcole/yolov5-flask/blob/master/docs/app_form.jpg" width="450">
+<img src="https://github.com/MeteePoyoi/Longbone_Detect_Diagnose/blob/main/static/help_2.gif" width="450">
 </p>
 
 <p align="center">
-<img src="https://github.com/robmarkcole/yolov5-flask/blob/master/docs/app_result.jpg width="450">
+<img src="https://github.com/MeteePoyoi/Longbone_Detect_Diagnose/blob/main/static/help_3.gif" width="450">
 </p>
 
 
